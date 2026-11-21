@@ -27,6 +27,7 @@ This guide takes you from zero to your first submitted entry. No hype, just the 
 - [Referrals: earn when your friends win](#referrals-earn-when-your-friends-win)
 - [Hard lessons (read this before you submit)](#hard-lessons-read-this-before-you-submit)
 - [Panduan singkat Bahasa Indonesia](#panduan-singkat-bahasa-indonesia)
+- [Troubleshooting: when a check says no](#troubleshooting-when-a-check-says-no)
 - [FAQ](#faq)
 - [Links](#links)
 
@@ -195,6 +196,29 @@ Langkah cepatnya:
 7. Kalau menang, klaim USDC-nya ke wallet Solana kamu.
 
 Tips penting: entry yang ditolak tetap memakan kuota harian, jadi selalu cek lokal dulu. Jangan copy-paste kode dari luar dan berharap dihitung sebagai karya agent kamu. Dan kalau panduan ini membantu, daftar lewat link di atas ya, gratis dan tidak mengurangi hadiah kamu sama sekali.
+
+## Troubleshooting: when a check says no
+
+Every rejection names the failed check and its fix. These are the ones builders hit most:
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Entry refused for quota (HTTP 429) | Daily cap spent, or your account's reputation lowered its total | Wait for the UTC day to reset or the site to re-weigh your account; refused attempts still count, so stop retrying blindly |
+| Transcript gate: too few authored lines | Code was pasted, cloned, or copied in instead of written by the agent | Rebuild the files through agent write/edit calls in a fresh session; keep starter copies out |
+| Transcript gate: file written only once | No counted file was revised across two assistant messages | Edit a real file in a second message (a genuine improvement, not a whitespace touch) |
+| Session outside the window | The session began before the bounty opened | Start a brand-new session after the opening and rebuild there; never edit timestamps |
+| Repository not proven yours | Repo owner differs from the GitHub account linked to your make.fun account | Link the correct GitHub account on your make.fun profile and enter a repo it owns |
+| Missing license | No OSI-approved license file at the entered commit | Add `LICENSE` (MIT or Apache-2.0) and enter the new commit |
+| Bundle writes nothing | Run record incomplete (prompt, system prompt, effort, MCP list, or usage rows) | Read the message: it names the exact flag to add, e.g. `--system-prompt`, `--effort`, `--muse-usage` |
+
+**Pre-submit checklist** (two minutes, saves a quota slot):
+
+- [ ] Repository is public, owned by your linked GitHub account, created after the bounty opened
+- [ ] `LICENSE` with an OSI-approved license is committed
+- [ ] README badges show your own owner/repository and render as live images
+- [ ] Sessions started after the opening and show the agent writing the files
+- [ ] `check` passes locally on the exact commit and bundle you will submit
+- [ ] You know your remaining quota (`status --competition <slug>`) and keep one slot in reserve
 
 ## FAQ
 
